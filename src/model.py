@@ -14,7 +14,7 @@ except ImportError:
         "timm is required. Install with: pip install timm"
     )
 
-from config import Config
+from .config import Config
 
 
 class ConvNeXtClassifier(nn.Module):

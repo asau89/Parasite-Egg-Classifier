@@ -6,9 +6,9 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-from config import Config
-from model import get_model
-from dataset import build_transforms
+from .config import Config
+from .model import get_model
+from .dataset import build_transforms
 
 class GradCAM:
     def __init__(self, model, target_layer):

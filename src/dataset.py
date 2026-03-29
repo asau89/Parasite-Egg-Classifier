@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as T
 import torchvision.transforms.functional as TF
 
-from config import Config
+from .config import Config
 
 
 # ── Augmentation helpers ──────────────────────────────────────────────────────
