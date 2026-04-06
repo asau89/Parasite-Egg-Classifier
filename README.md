@@ -164,6 +164,3 @@ Detailed technical documentation for each phase is available in the [`docs/`](do
 | **CPU** | AMD Ryzen 7 7700 |
 | **RAM** | 32GB DDR5 |
 
-## 📜 License
-
-This project is developed as part of an undergraduate thesis.
