@@ -22,7 +22,7 @@ dataset/
 
 ## Manifest Text Files
 
-`train_set.txt`, `val_set.txt`, and `test_set.txt` were generated using `generate_lists.ps1`. Each file lists one image per line as a **relative path without the file extension**:
+`train_set.txt`, `val_set.txt`, and `test_set.txt` are stored in the `data/` directory. Each file lists one image per line as a **relative path without the file extension**:
 
 ```
 dataset/train/Ascaris_lumbricoides/Ascaris lumbricoides_0010
@@ -30,14 +30,9 @@ dataset/train/Hookworm/Hookworm egg_0019
 ...
 ```
 
-To regenerate the manifest files:
-```powershell
-powershell -ExecutionPolicy Bypass -File .\generate_lists.ps1
-```
-
 ## Class Label Mapping
 
-Labels are derived from the subfolder name in code (`dataset.py`):
+Labels are derived from the subfolder name in code (`src/dataset.py`):
 
 | Folder Name | Class Index |
 |-------------|-------------|
@@ -79,6 +74,6 @@ Resize(416) → CenterCrop(384) → ToTensor → Normalize
 
 | File | Role |
 |------|------|
-| `generate_lists.ps1` | Generates the manifest `.txt` files |
-| `dataset.py` | `ParasiteDataset` class + `get_dataloaders()` factory |
-| `config.py` | Paths to manifest files, augmentation parameters |
+| `data/*.txt` | Manifest files for each split |
+| `src/dataset.py` | `ParasiteDataset` class + `get_dataloaders()` factory |
+| `src/config.py` | Paths to manifest files, augmentation parameters |

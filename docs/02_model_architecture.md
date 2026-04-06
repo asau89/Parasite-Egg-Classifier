@@ -61,5 +61,5 @@ Input image (384×384×3)
 
 | File | Role |
 |------|------|
-| `model.py` | `ConvNeXtClassifier` class and `get_model()` factory |
-| `config.py` | `model_name`, `image_size`, `dropout`, `pretrained` settings |
+| `src/model.py` | `ConvNeXtClassifier` class and `get_model()` factory |
+| `src/config.py` | `model_name`, `image_size`, `dropout`, `pretrained` settings |

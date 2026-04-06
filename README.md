@@ -86,14 +86,28 @@ All outputs are saved to the `outputs/analysis/` directory.
 
 ```text
 Thesis-MultiClass-Image-Classification/
+├── data/               # Dataset manifests (train/val/test lists)
+│   ├── train_set.txt
+│   ├── val_set.txt
+│   └── test_set.txt
 ├── src/                # Core Logic (Config, Model, Dataset, Utils)
+│   ├── config.py       # Configuration and hyperparameters
+│   ├── dataset.py      # PyTorch Dataset and Dataloader
+│   ├── model.py        # ConvNeXt model architecture
+│   ├── utils.py        # Helper functions and metrics
+│   └── visualize_cam.py # Grad-CAM implementation
 ├── scripts/            # CLI Tools (Train, Eval, Tune, Analysis)
-├── data/               # Dataset manifests and split lists
+│   ├── train.py        # Main training script
+│   ├── evaluate.py     # Evaluation on test set
+│   ├── tune.py         # Hyperparameter tuning
+│   ├── analysis.py     # ROC, t-SNE, and cost analysis
+│   └── inference.py    # CLI image inference
 ├── templates/          # Modern Web UI (HTML/CSS)
-├── outputs/            # Model checkpoints, logs, and research plots
+├── outputs/            # Model checkpoints, logs, and plots
 ├── app.py              # Flask Web Application
 ├── Dockerfile          # Container configuration
-└── DOCUMENTATION.md    # Technical depth & project details
+├── docker-compose.yml  # Docker multi-container setup
+└── DOCUMENTATION.md    # Complete technical documentation
 ```
 
 ---

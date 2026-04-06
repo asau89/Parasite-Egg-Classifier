@@ -159,26 +159,26 @@ tuning_results/
 ## How to Run
 
 ```bash
-python tune.py --phase 1          # ~3.75 hrs
-python tune.py --phase 2          # ~4.5 hrs
-python tune.py --phase 3          # ~3.75 hrs
-python tune.py --phase 4          # ~2.25 hrs (optional)
-python tune.py --phase 5          # ~3 hrs
-python tune.py --phase 6          # ~3.75 hrs
-python tune.py --phase 7          # ~2.25 hrs
-python tune.py --phase 8          # ~3 hrs
+python scripts/tune.py --phase 1          # ~3.75 hrs
+python scripts/tune.py --phase 2          # ~4.5 hrs
+python scripts/tune.py --phase 3          # ~3.75 hrs
+python scripts/tune.py --phase 4          # ~2.25 hrs (optional)
+python scripts/tune.py --phase 5          # ~3 hrs
+python scripts/tune.py --phase 6          # ~3.75 hrs
+python scripts/tune.py --phase 7          # ~2.25 hrs
+python scripts/tune.py --phase 8          # ~3 hrs
 
-python compare_results.py         # Final comparison + best_config.json
+python scripts/compare_results.py         # Final comparison + best_config.json
 ```
 
 Preview a phase without training:
 ```bash
-python tune.py --phase 5 --dry-run
+python scripts/tune.py --phase 5 --dry-run
 ```
 
 ## After Tuning
 
 1. Open `tuning_results/best_config.json`
-2. Copy the values into `config.py`
-3. Run final training: `python train.py`
-4. Evaluate: `python evaluate.py`
+2. Copy the values into `src/config.py`
+3. Run final training: `python scripts/train.py`
+4. Evaluate: `python scripts/evaluate.py`

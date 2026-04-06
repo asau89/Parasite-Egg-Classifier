@@ -11,7 +11,7 @@ Post-training analysis scripts that generate outputs required for academic publi
 
 ---
 
-## Multi-Seed Training
+### Multi-Seed Training
 
 **Why it matters**: A single run is a single random sample. Academic papers report results as **mean ± std** across multiple seeds to demonstrate that performance is consistent, not due to a lucky random initialization.
 
@@ -19,7 +19,7 @@ Post-training analysis scripts that generate outputs required for academic publi
 
 ```bash
 # 5-seed training (recommended for thesis)
-python train.py --seeds 42,123,456,789,1234
+python scripts/train.py --seeds 42,123,456,789,1234
 ```
 
 ### Outputs
@@ -59,7 +59,7 @@ Mean          93.06%  ±1.05%
 ### Usage
 
 ```bash
-python analysis.py --roc
+python scripts/analysis.py --roc
 ```
 
 ### Outputs
@@ -90,10 +90,10 @@ Macro Average                  0.9873
 ### Usage
 
 ```bash
-python analysis.py --tsne
+python scripts/analysis.py --tsne
 
 # Adjust perplexity for different dataset sizes (default: 30)
-python analysis.py --tsne --tsne-perplexity 20
+python scripts/analysis.py --tsne --tsne-perplexity 20
 ```
 
 ### Outputs
@@ -115,7 +115,7 @@ The script attaches a hook to the ConvNeXt backbone's final layer before the cla
 ### Usage
 
 ```bash
-python analysis.py --cost
+python scripts/analysis.py --cost
 ```
 
 ### Outputs
@@ -148,10 +148,10 @@ Inference speed  : 47.3 images/sec (CUDA)
 ## Run All Analyses at Once
 
 ```bash
-python analysis.py --all
+python scripts/analysis.py --all
 
 # With custom checkpoint
-python analysis.py --all --checkpoint tuning_results/phase_3/trial_2/best_model.pth
+python scripts/analysis.py --all --checkpoint tuning_results/phase_3/trial_2/best_model.pth
 ```
 
 All outputs are saved to `outputs/analysis/`.

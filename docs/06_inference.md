@@ -17,60 +17,63 @@
 | Entire folder | `python inference.py --folder my_images/` |
 | Custom checkpoint | add `--checkpoint path/to/model.pth` to any of the above |
 
-## How to Run
+## How to Run (CLI)
 
 ```bash
 # Single image
-python inference.py --image test_sample.jpg
+python scripts/inference.py --image test_sample.jpg
 
 # Folder of images
-python inference.py --folder my_test_images/
+python scripts/inference.py --folder my_test_images/
 
 # With a tuned checkpoint
-python inference.py --folder my_test_images/ --checkpoint tuning_results/phase_3/trial_2/best_model.pth
+python scripts/inference.py --folder my_test_images/ --checkpoint tuning_results/phase_3/trial_2/best_model.pth
 
 # Change output directory
-python inference.py --folder my_test_images/ --output-dir results/
+python scripts/inference.py --folder my_test_images/ --output-dir results/
 
 # Change grid columns (default: 4)
-python inference.py --folder my_test_images/ --grid-cols 3
+python scripts/inference.py --folder my_test_images/ --grid-cols 3
 ```
 
-## Console Output
+---
 
-For every image, the predicted class + all 3 class probabilities are printed:
+## Interactive Web UI (Flask)
 
+The project includes a modern, dark-themed web interface for easier classification and explainability analysis.
+
+### Features
+- **Single/Batch Upload**: Process one or many images at once.
+- **Grad-CAM Visualization**: View side-by-side explainability heatmaps for every prediction.
+- **Probability Charts**: Interactive charts showing confidence across all classes.
+- **History Gallery**: Browse previously processed images and their results.
+
+### How to Run
+```bash
+python app.py
 ```
-══════════════════════════════════════════════════════════════════════
-INFERENCE RESULTS
-Image                      Prediction            Confidence   Ascaris   Hookworm   Trichuris
-────────────────────────────────────────────────────────────────────
-sample_A.jpg               Hookworm               97.32%       1.10%    97.32%      1.58%
-sample_B.jpg               Ascaris lumbricoides   84.15%      84.15%     9.12%      6.73%
-```
+Then visit `http://localhost:5000` in your browser.
 
-## Output Files
+---
+
+## Output Files (CLI)
 
 | File | Content |
 |------|---------|
 | `outputs/inference_results.csv` | All predictions: filename, predicted class, confidence, per-class probability |
 | `outputs/inference_grid.png` | Visual montage of images with predicted label and confidence overlaid |
 
-## inference_grid.png
-
-The grid image shows each input image with:
-- A **colour-coded border** per class (blue = Ascaris, orange = Hookworm, green = Trichuris)
-- The **predicted class name** and **confidence %** as a label overlay
-- A **confidence bar** at the bottom of each image
+---
 
 ## Checkpoint Auto-Detection
 
-The checkpoint stores the model variant and image size used during training. `inference.py` reads these automatically — no manual config changes required even if you switch between `convnext_tiny` and `convnext_base` checkpoints.
+The checkpoint stores the model variant and image size used during training. `scripts/inference.py` reads these automatically — no manual config changes required even if you switch between `convnext_tiny` and `convnext_base` checkpoints.
 
 ## Key Files
 
 | File | Role |
 |------|------|
-| `inference.py` | Main inference script |
+| `scripts/inference.py` | Main CLI inference script |
+| `app.py` | Flask Web Application |
 | `outputs/best_model.pth` | Default checkpoint (from `train.py`) |
 | `tuning_results/phase_N/trial_X/best_model.pth` | Alternative checkpoints (from `tune.py`) |

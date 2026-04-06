@@ -28,10 +28,10 @@ Metrics are computed via `sklearn.metrics.classification_report` and printed to 
 
 ```bash
 # Use default best_model.pth
-python evaluate.py
+python scripts/evaluate.py
 
 # Use a specific checkpoint (e.g. from tuning)
-python evaluate.py --checkpoint tuning_results/phase_3/trial_2/best_model.pth
+python scripts/evaluate.py --checkpoint tuning_results/phase_3/trial_2/best_model.pth
 ```
 
 ## Sample Console Output
@@ -66,6 +66,6 @@ A perfect model would have all values on the diagonal.
 
 | File | Role |
 |------|------|
-| `evaluate.py` | Evaluation script |
+| `scripts/evaluate.py` | Evaluation script |
 | `outputs/best_model.pth` | Checkpoint to evaluate |
-| `test_set.txt` | List of test image paths |
+| `data/test_set.txt` | List of test image paths |
