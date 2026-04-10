@@ -58,21 +58,26 @@ The system classifies three of the most prevalent intestinal parasites worldwide
 1. **Clone and Install**
 
 ```bash
-git clone https://github.com/yourusername/Thesis-MultiClass-ImageClassification.git
-cd Thesis-MultiClass-ImageClassification
+git clone https://github.com/ggranbell/Parasite-Egg-Classifier.git
+cd Parasite-Egg-Classifier
 
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
 ```
 
-2. **Install PyTorch with CUDA**
+2. **Install PyTorch with CUDA** (Recommended for GPU support)
 
 ```bash
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
 
-3. **Run the Web UI**
+3. **Install Other Dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Run the Web UI**
 
 ```bash
 python app.py
@@ -118,7 +123,7 @@ All outputs are saved to the `outputs/analysis/` directory.
 ## 📂 Project Architecture
 
 ```text
-Thesis-MultiClass-ImageClassification/
+Parasite-Egg-Classifier/
 ├── data/                 # Dataset manifests (train/val/test splits)
 │   ├── train_set.txt     # 420 training images
 │   ├── val_set.txt       # 60 validation images

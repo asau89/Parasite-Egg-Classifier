@@ -502,4 +502,4 @@ Each phase runs full 50-epoch training with early stopping. The best hyperparame
 ---
 
 *Document generated on March 29, 2026.*
-*Project: Thesis-MultiClass-ImageClassification*
+*Project: Parasite-Egg-Classifier*

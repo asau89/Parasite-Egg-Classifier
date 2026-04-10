@@ -34,7 +34,7 @@ All images are `.jpg`. Manifest text files (`train_set.txt`, `val_set.txt`, `tes
 ## Project File Structure
 
 ```
-Thesis-MultiClass-Image-Classification/
+Parasite-Egg-Classifier/
 ├── data/               # Dataset manifests (train/val/test lists)
 │   ├── train_set.txt
 │   ├── val_set.txt
